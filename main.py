@@ -37,7 +37,7 @@ def fetch_home():
 
 
 def fetch_detail():
-    fd = open("books.csv", "w")
+    fd = open("books.csv", "a")
     fieldnames = ["Name", "Year", "Author", "ISBN-10", "Pages",
                   "Language", "File size", "File format", "Category",
                   "Links"]
@@ -54,8 +54,18 @@ def fetch_detail():
             print(detail_bs.title)
             
             dl_bs = detail_bs.find("dl")
+            if not dl_bs:
+                with open("fail.txt", "a") as f:
+                    f.write(f"fail, nodl, {link}")
+                    f.write("\n")
+                continue
             dd_lst = dl_bs.find_all("dd")
             dt_lst = dl_bs.find_all("dt")
+            if not (dd_lst and dt_lst):
+                with open("fail.txt", "a") as f:
+                    f.write(f"fail, nodd or dt, {link} ")
+                    f.write("\n")
+                continue
             book_info = {}
             book_name = detail_bs.find(class_="single-title").string
             book_info["Name"] = book_name
@@ -71,6 +81,11 @@ def fetch_detail():
             # print(book_name)
         else:
             print("error~~~~~~~~~~~", link)
+            if not (dd_lst and dt_lst):
+                with open("fail.txt", "a") as f:
+                    f.write(f"fail, not 200, {link} ")
+                    f.write("\n")
+                continue
     fd.close()
 
 

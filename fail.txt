@@ -1,0 +1,16 @@
+fail, nodl, http://www.allitebooks.org/learn-office-2016-for-mac-2nd-edition-2/
+
+fail, nodl, http://www.allitebooks.org/troubleshooting-and-maintaining-your-pc-all-in-one-for-dummies-3rd-edition-2/
+
+fail, nodl, http://www.allitebooks.org/beginning-robotics-with-raspberry-pi-and-arduino/
+
+fail, nodl, http://www.allitebooks.org/embedded-systems-architecture-for-agile-development-2/
+
+fail, nodl, http://www.allitebooks.org/deploying-raspberry-pi-in-the-classroom-2/
+
+fail, nodl, http://www.allitebooks.org/git-best-practices-guide/
+
+fail, nodl, http://www.allitebooks.org/cloud-computing-using-oracle-application-express-2/
+
+fail, nodl, http://www.allitebooks.org/building-isomorphic-javascript-apps/
+
